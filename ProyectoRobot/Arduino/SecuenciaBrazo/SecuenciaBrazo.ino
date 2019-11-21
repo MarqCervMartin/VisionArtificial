@@ -18,19 +18,10 @@ void setup()
   codo.write(90);
   girohombro.attach(5);
   girohombro.write(90);
-  Serial.begin(9600);
-  Serial.println("Modulo Conectado");
-  Serial.println("#");
+  
 }
 void loop(){
-  //prender con app
-  if(Serial.available()){
-     char VarChar;
-     VarChar = Serial.read();
 
-     if(VarChar=='1'){
-        Serial.print("ENCENDIDO");
-        Serial.print("#");
         for(pos = 90; pos >=0; pos--){
            gripper.write(pos);
            delay(5);
@@ -118,9 +109,4 @@ void loop(){
         
         delay(6000);
 
-     }//if VarChar ==1
-     if(VarChar =='0'){
-      Serial.print("APAGADO#");
-     }
-  }//if serial.avaible
 }
